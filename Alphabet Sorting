@@ -1,0 +1,42 @@
+C++ project, the project is about making a console program that can sorts an alphabet, using the same concepts as we do the number sorting. 
+
+// 1 FILES, MAIN FILES.
+
+#include <iostream>
+using namespace std;
+
+void Sort(char arr[], int jumlaharr){ 
+
+   for (int i = 0; i < jumlaharr; i++){ // selection 
+        int temp;  // variabel penampung data
+        int pivot = i; // pivot jalan nya bareng ama counter nya, kalo counter nya di , maka pivot nya 0 juga, kalo counter nya di 1 maka pivot nya di 1 juga. 
+        for (int j = i + 1; j < jumlaharr; j++)
+        {
+            if (arr[pivot] > arr[j]) // ngecek kalo indeks ke 1 ama 0 nya gedean indeks ke 1 nya. ( 6 5 ) 
+            {
+                pivot = j; // nuker posisi lah mereka berdua tadi. ( 5 6 ) 
+            } 
+        }
+        temp = arr[pivot]; // si indeks ke 0 nya diisi ke var temp. (5) 
+        // arr[pivot] = arr[i];
+        arr[i] = temp; // arr(0) = 5. 
+        cout << arr[i] << " "; 
+    }
+}
+
+int main()
+{
+    int jumlaharr;
+    char array[26]; //= { 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z' };
+    cout << "Jumlah Huruf : ";
+    cin >> jumlaharr; // berapa banyak huruf yang mau di urutin
+
+    for (int a = 0; a < jumlaharr; a++)
+    {
+        cout << "Indeks Ke-" << a << ": ";
+        cin >> array[a];
+    }
+    cout << "\nSetelah Sorting: ";
+    Sort(array, jumlaharr);
+}
+// Alphabet Sorting
