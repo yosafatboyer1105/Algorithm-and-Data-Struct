@@ -1,0 +1,38 @@
+C++ project, the project is about making a console program that asking for 3 number inputs from the user, and the it can generates an output of a number that already get sorted. 
+
+// 1 FILES, MAIN FILES. 
+
+#include <iostream>
+using namespace std;
+
+void Bubblesort(int Array[], int JumlahArr) { // parameter inputan data, data berisi angka dibawa dari int main 
+    int skey;
+    for (int i = 0; i < JumlahArr; i++) {
+        for (int j = 0; j < JumlahArr; j++) {
+            if (Array[j] > Array[j + 1]) {
+                skey = Array[j];
+                Array[j] = Array[j + 1];       // data dari indeks ke 1 dimasukkan ke indeks ke 0 
+                Array[j + 1] = skey;
+            }
+        }
+    }
+    cout << "Hasil Sorting : ";
+    for (int a = 1; a <= JumlahArr; a++) {
+        cout << Array[a] << " ";
+    }
+}
+
+int main()
+{
+    int jumlahArr;
+    int Array[100];
+    jumlahArr = 3; // ampe 3 doang minta input nya bos. 
+    cout << "Welcome to Comparison using Array part 2 ! ";
+    cout << "\n";
+    for (int i = 1; i <= jumlahArr; i++) {
+        cout << "Masukkan angka di array " << i << " = ";
+        cin >> Array[i];
+    }
+    Bubblesort(Array, jumlahArr);
+}
+// Comparison Using Array Part 2.
