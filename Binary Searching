@@ -1,0 +1,47 @@
+C++ project, the project is about making a console program that can show a array of numbers, 
+and the user can choose 1 number from those arrays, and the output is the program can check whether the number we input are in the arrays or not. 
+
+
+// 1 FILES, MAIN FILES. 
+
+
+#include <iostream> 
+#include <conio.h>
+using namespace std;
+
+int main() {
+	const int array[13] = { 2,3,4,10,40,45,50,60,67,80,85,90,95 }; // deklarasi data yang mau kita tampilin 
+	int data; // variabel penampung buat masukin nilai yg mau kita cari
+	int kecil = 0, besar = 12, medium;
+	cout << "Your data:\n";
+	for (int p = 0; p < 13; p++) { // p sebagai indeks counter buat ngeluarin array 2 - 95 
+		cout << array[p] << "\t"; // yang penting itu nama array nya, buat counter nya bisa pake huruf apa aja. (nama array nya yang dipake buat ngidentifikasi).
+	}
+	cout << "\n\n";
+	cout << "Search some data: ";
+	cin >> data; 
+	// BAGIAN NGECEK KALO LEBIH BESAR ATAU LEBIH KECIL
+	while (kecil <= besar) {
+		medium = (kecil + besar) / 2;
+		if (data > array[medium]) { // kecil nya jadi 7. (berarti data nya gede masukan nya)
+			kecil = medium + 1;
+
+		}
+		else if (data < array[medium]) { // besar nya jadi 5. (berarti data nya kecil masukan nya)
+			besar = medium - 1;
+
+		}
+		else { kecil = besar + 1; }
+
+	}
+	// BAGIAN NGECEK KALO DATA YG KITA MASUKIN UDAH sama persis seperti INDEKS NYA
+	if (data == array[medium]) {
+		cout << "Element is present at index " << medium;
+	}
+	else {
+		cout << "Element is not present in array ";
+
+	}
+}
+	// BINARY SEARCHING 
+
