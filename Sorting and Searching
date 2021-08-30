@@ -1,0 +1,77 @@
+c++ project, the project is about making a console program that can sort and then search the data that user has inputted. 
+
+
+// 1 FILES, MAIN FILES.
+// MASI BELOM JALAN BENER CODE NYA, MASI PERLU DIPERBAIKIN DI BAGIAN CEK URUT, AMA BAGIAN CARI DATA NYA. 
+
+
+#include <iostream>
+using namespace std;
+
+    void InsertionSort(int array[], int JumlahArray) {
+        int j, tukar;
+        for (int i = 0; i < JumlahArray; i++) {
+            j = i;
+            while (j > 0 && array[j - 1] > array[j]) {
+                tukar = array[j];
+                array[j] = array[j - 1];
+                array[j - 1] = tukar;
+                j--;
+            }
+        }
+    }
+
+    int CekUrut(int Array[], int no) {
+        for (int i = 0; i < no; ++i) {
+            if (Array[no - 1] < Array[no - 2])
+                return 0;
+        }
+        return 1;
+    }
+
+ int main() {
+        int Array[90];
+        int JumlahArray;
+        int pilih = 0;
+        int no = sizeof(Array) / sizeof(Array[0]); //Ukuran/panjang Array
+        cout << "Masukkan jumlah data: "; 
+        cin >> JumlahArray;
+        for (int i = 0; i < JumlahArray; i++) {
+            cout << "Data ke-" << i << ": ";
+            cin >> Array[i];
+        }
+
+        if (CekUrut(Array, no)) {
+            cout << "Data anda sudah urut\n";
+        }
+        else
+            cout << "Data Belum Urut\n";
+
+        while (pilih != 5) {
+            cout << "\n\n1. Urutkan Data\n2. Cari Data\n3. Tampilkan Data\n4. Hapus Layar\n5. Exit\nMasukkan pilihan anda: ";
+            cin >> pilih;
+            if (pilih == 1) {
+                InsertionSort(Array, JumlahArray);
+                cout << "Data anda sudah urut";
+            }
+            else if (pilih == 2) {
+
+            }
+            else if (pilih == 3) {
+                for (int i = 0; i < JumlahArray; i++) {
+                    cout << Array[i] << " ";
+                }
+
+            }
+            else if (pilih == 4) {
+                system("cls");
+               
+            }
+        }
+        cout << "Terimakasih";
+
+        return 0;
+    }
+// harus dibenerin. 
+
+
