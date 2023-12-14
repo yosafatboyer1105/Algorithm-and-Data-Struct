@@ -5,8 +5,8 @@ Ada 2 section di repo ini, section nya algoritma, dan section nya struktur data.
 Ada beberapa projek. 
 Bahasa program : C++
 
-Materi berkutat di : 
-Algoritma : 
+Materi berkutat di  
+Algoritma :
 - Algoritma Sorting (Bubble sorting, Selection sorting, Insertion sorting, Shell sorting, Merge sorting, Quick sorting, Heap sorting, Bucket, Radix)
 - Algoritma Searching (Sequential and Binary searching). 
 
